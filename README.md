@@ -1,36 +1,35 @@
 # PhylSlider.js
-Interactive SVG slider for phylogenetic trees
-!(PylSlider.js in action)[sample.jpg]
+An interactive SVG slider for phylogenetic trees.
+
+!(PhylSlider.js in action)[https://raw.githubusercontent.com/Astrak/PhylSlider.js/master/sample.jpg]
 
 ## What is this ?
-In early 2016 I had not found any tree-like SVG slider in javascript. None for the kind of interaction I needed in the demo below. So here it is. 
+Seems javascript does not have any library for this, so here it is. Better experience than blabla : demo at astrak.github.io/evolution
 
 ## Warning : big todo list > contributions welcome !
-This is a really cool interaction tool but there is a lot of work to do though : first the javascript is quite ugly since this writing this library was not my primary mean in this project. Moreover :
+This is a really cool interaction tool but there is a lot of work to do though : first the javascript is quite ugly since this writing this library was not my primary mean in this project, I stopped working on it as soon as it did the job. Moreover :
 - the colors of the tags are not yet tweened with the thumb. 
-- it has a huge need of a serious viewport handler. 
+- it needs a viewport handler : first a little function to set the correct `viewBox` depending on the viewport's width. But it could also change depending on mobile orientation, since this tool takes some place on a mobile screen. But it would also change the page layout so the developper may prefer to set that himself. In the demo that is what I did on horizontal orientation : the new layout is changed outside PhylSlider.js.
 - there is no real graph design since the tree must be passed all at once, no nice d3-like `node1.add( node2 )` yet.
-- as can be first thought, the maximum number of children from the root is limited. On mobile vertical orientation, you cannot have more than 4 children from the root. I have a little idea on how to bypass that problem but it is a very big work and not my priority for now.
-- it is hard to imagine nodes with 3 children, though it is not usual in pylogenetics it can be needed. Better keep 2 children as in phylogenetics theory and though you could need it for another use case. It essentially is about design.
+- as can be first thought, the maximum number of children from the root is limited. On mobile vertical orientation, you cannot have more than 4 children from the root with biggest screens. I have a little idea on how to bypass that problem but it is a very big work and not my priority for now.
+- not sure if branches should arrive to their nodes, or if the script should check if nodes have children to draw branches that come from them.
+- it is hard to imagine nodes with 3 children and it is not usual in pylogenetics. Better keep 2 children as in phylogenetics theory and though you could need it for another use case. It essentially is about design for now.
 
-For all these reasons contribution are welcome :)
-
-## Demo
-astrak.github.io/evolution
+For all these reasons it is a complex feature and contribution are welcome :)
 
 ## Use
 	var tree = {
 		content:'H. habilis',
-		content0:'Australopithecus',
-		content0X:-23,
-		content0Y:132,
-		mode:'off',
-		xStart:10,
+		content0:'Australopithecus',        //the node branch is the one that arrives to it. Content0 is an optional
+		content0X:-23,                      //tag for the beginning of this branch.
+		content0Y:132,                      
+		mode:'off',                         //tells whether the thumb can slide on that node's branch. Since it is
+		xStart:10,                          //the root branch that arrives to the first node, it is disabled.
 		yStart:110,
 		xEnd:70,
 		yEnd:85,
 		tween:{
-			tI:[1,0,0,0,0,0,0,0,0,0]
+			tI:[1,0,0,0,0,0,0,0,0,0]        //tween can have multiple properties which can be numbers or arrays
 		},
 		children:[
 			...
@@ -53,5 +52,3 @@ astrak.github.io/evolution
 	});
 
 	slider.setThumb( 'H. habilis' );        //sets the initial active tree node
-
-
