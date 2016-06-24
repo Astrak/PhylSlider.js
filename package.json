@@ -1,0 +1,18 @@
+{
+  "name": "PhylSlider.js",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "^1.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Astrak/PhylSlider.js.git"
+  },
+  "keywords": [
+    "phylogenetic trees",
+    "interaction",
+    "javascript"
+  ],
+  "author": "Astrak"
+}
