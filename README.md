@@ -1,7 +1,7 @@
 # PhylSlider.js
 An interactive SVG slider for phylogenetic trees.
 
-!(PhylSlider.js in action)[https://raw.githubusercontent.com/Astrak/PhylSlider.js/master/sample.jpg]
+!(PhylSlider.js in action)[https://github.com/Astrak/PhylSlider.js/blob/master/sample.jpg?raw=true]
 
 ## What is this ?
 Seems javascript does not have any library for this, so here it is. Better experience than blabla : demo at astrak.github.io/evolution
