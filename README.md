@@ -7,7 +7,7 @@ An interactive SVG slider for phylogenetic trees.
 Seems javascript does not have any library for this, so here it is. Better experience than blabla : [see the demo](https://astrak.github.io/evolution).
 
 ## Warning : big todo list > contributions welcome !
-This is a really cool interaction tool but there is a lot of work to do though : first the javascript is quite ugly since this writing this library was not my primary mean in this project, I stopped working on it as soon as it did the job. Moreover :
+This is a really cool interaction tool but there is a lot of work to do though : first the javascript is quite ugly since writing this library was not my primary mean in this project, I stopped working on it as soon as it did the job. Moreover :
 - the colors of the tags are not yet tweened with the thumb. 
 - it needs a viewport handler : first a little function to set the correct `viewBox` depending on the viewport's width. But it could also change depending on mobile orientation, since this tool takes some place on a mobile screen. But it would also change the page layout so the developper may prefer to set that himself. In the demo that is what I did on horizontal orientation : the new layout is changed outside PhylSlider.js.
 - there is no real graph design since the tree must be passed all at once, no nice d3-like `node1.add( node2 )` yet.
@@ -40,9 +40,9 @@ For all these reasons it is a complex feature and contribution are welcome :)
 		width:340, height:145,
 		fontSize:20,
 		fontFamily:'Arial',
-		bezier:false,
-		color:'#333',
-		colorOff:'#222',
+		bezier:false,                       //whether parent-child lines are straight or bezier
+		color:'#333',                       //thumb color
+		colorOff:'#222',                    //color of disabled branches
 		strokeWidth:8,
 		switchableStyle:false,              //adds a button to switch parent-child lines from straight line to bezier
 		callback:function ( tween ) {       //example of callback used in the threejs demo above
